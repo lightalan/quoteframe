@@ -1,0 +1,10 @@
+#!/bin/bash
+# Daemon process to periodically check for emailed inbound quotes
+export fqdir="/home/pi/winshare/framequotes"
+export qdir="$fqdir/quotes"
+
+while true; do
+    $fqdir/quoteme1001.py
+    sleep 60m
+done
+

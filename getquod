@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Get the quote of the day and write it to a file in our quotes directory
+# This should be called daily via cron.
+# If qotd.py returns a non-zero status (usually because the quote was too long),
+# we don't save the file.
+
+fname="/home/pi/winshare/framequotes/quotes/quote_"`uuid`
+
+/home/pi/winshare/framequotes/qotd.py > ${fname}.tmp
+if test $? -eq 0
+then
+    mv ${fname}.tmp ${fname}.txt
+else
+    rm ${fname}.tmp 
+fi
+

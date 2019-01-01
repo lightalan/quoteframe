@@ -1,0 +1,13 @@
+#!/bin/bash
+export fqdir="/home/pi/winshare/framequotes"
+export qdir="$fqdir/quotes"
+export idir="$fqdir/images"
+export tsfile="$fqdir/ts.txt"
+
+while true; do
+    cp -p $tsfile "${tsfile}.sav"
+    touch $tsfile
+    find $qdir -type f -name "*.txt" -newermm "${tsfile}.sav" -exec $fqdir/renderquote {} \;
+    sleep 60m
+done
+

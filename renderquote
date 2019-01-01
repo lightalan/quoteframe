@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Render a quote with a random font
+
+fonts=('blackjack' 'AlegreyaSCBI' 'Piboto-Bold-Italic' 'URWGothicBook' 'Liberation-Serif')
+
+$fqdir/renderquote.pl -d $idir -f ${fonts[$RANDOM % ${#fonts[@]} ]} $1
+
+
