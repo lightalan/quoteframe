@@ -4,7 +4,7 @@ export fqdir="/home/pi/winshare/framequotes"
 export qdir="$fqdir/quotes"
 
 while true; do
-    $fqdir/quoteme1001.py
+    $fqdir/quotemail.py
     sleep 60m
 done
 
